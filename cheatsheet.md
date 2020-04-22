@@ -13,11 +13,11 @@ See documentation at https://docs.docker.com/engine/reference/run/
 
 For interactive execution:
 
-    docker run --publish 80:8080 --publish 27017:27017 --name brettonw-docker --env MONGO_INITDB_ROOT_USERNAME=brettonw-root --env MONGO_INITDB_ROOT_PASSWORD=xxx -it brettonw/docker:1.0.0
+    docker run --publish 80:80 --publish 8080:8080 --publish 27017:27017 --name brettonw-docker --env MONGO_INITDB_ROOT_USERNAME=brettonw-root --env MONGO_INITDB_ROOT_PASSWORD=xxx -it brettonw/docker:1.0.0 --bind_ip_all
 
 For standalone execution (remove --bind_ip_all to keep the mongo instance private):
 
-    docker run --publish 80:8080 --publish 27017:27017 --name brettonw-docker --env MONGO_INITDB_ROOT_USERNAME=brettonw-root --env MONGO_INITDB_ROOT_PASSWORD=xxx --detach brettonw/docker:1.0.0 --bind_ip_all
+    docker run --publish 80:80 --publish 8080:8080 --publish 27017:27017 --name brettonw-docker --env MONGO_INITDB_ROOT_USERNAME=brettonw-root --env MONGO_INITDB_ROOT_PASSWORD=xxx --detach brettonw/docker:1.0.0 --bind_ip_all
 
 ## stop 
 Stop and remove the running instance:
